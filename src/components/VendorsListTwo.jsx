@@ -37,6 +37,7 @@ const VendorsListTwo = () => {
                   </span>
                   <span className='bg-white text-neutral-900 rounded-pill py-6 px-16 text-12 mt-8'>
                     Since 2009
+                    
                   </span>
                   <p className='text-neutral-600 my-24'>
                     It's easy and free to link or sign up for our loyalty
