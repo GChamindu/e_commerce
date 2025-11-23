@@ -56,7 +56,7 @@ const page = () => {
       <FlashSalesOne />
 
       {/* ProductListOne */}
-      <ProductListOne />
+      {/* <ProductListOne /> */}
 
       {/* OfferOne */}
       <OfferOne />
