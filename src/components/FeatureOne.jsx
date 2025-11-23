@@ -1,34 +1,71 @@
 "use client";
-import React from "react";
+
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Slider from "react-slick";
+import Image from "next/image";
 
 const FeatureOne = () => {
-  function SampleNextArrow(props) {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchFeatured = async () => {
+      try {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/products/featured`, {
+          next: { revalidate: 3600 }, // Cache 1 hour
+        });
+
+        if (!res.ok) throw new Error("Failed");
+
+        const json = await res.json();
+        if (json.success && json.data) {
+          setProducts(json.data);
+
+          // Optional: Apply SEO from API if available
+          if (json.meta) {
+            document.title = json.meta.title || "ZeoLankaSpice – Premium Ceylon Spices Sri Lanka";
+            const desc = document.querySelector('meta[name="description"]');
+            if (desc) desc.content = json.meta.description || "";
+          }
+        }
+      } catch (err) {
+        console.error("Featured products error:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchFeatured();
+  }, []);
+
+  // Your exact arrow styles
+  const SampleNextArrow = (props) => {
     const { className, onClick } = props;
     return (
       <button
-        type='button'
+        type="button"
         onClick={onClick}
-        className={` ${className} slick-next slick-arrow flex-center rounded-circle bg-white text-xl hover-bg-main-600 hover-text-white transition-1`}
+        className={`${className} slick-next slick-arrow flex-center rounded-circle bg-white text-xl hover-bg-main-600 hover-text-white transition-1`}
       >
-        <i className='ph ph-caret-right' />
+        <i className="ph ph-caret-right" />
       </button>
     );
-  }
-  function SamplePrevArrow(props) {
-    const { className, onClick } = props;
+  };
 
+  const SamplePrevArrow = (props) => {
+    const { className, onClick } = props;
     return (
       <button
-        type='button'
+        type="button"
         onClick={onClick}
         className={`${className} slick-prev slick-arrow flex-center rounded-circle bg-white text-xl hover-bg-main-600 hover-text-white transition-1`}
       >
-        <i className='ph ph-caret-left' />
+        <i className="ph ph-caret-left" />
       </button>
     );
-  }
+  };
+
   const settings = {
     dots: false,
     arrows: true,
@@ -40,243 +77,88 @@ const FeatureOne = () => {
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     responsive: [
-      {
-        breakpoint: 1699,
-        settings: {
-          slidesToShow: 9,
-        },
-      },
-      {
-        breakpoint: 1599,
-        settings: {
-          slidesToShow: 8,
-        },
-      },
-      {
-        breakpoint: 1399,
-        settings: {
-          slidesToShow: 6,
-        },
-      },
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 5,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 4,
-        },
-      },
-      {
-        breakpoint: 575,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 424,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 359,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
+      { breakpoint: 1699, settings: { slidesToShow: 9 } },
+      { breakpoint: 1599, settings: { slidesToShow: 8 } },
+      { breakpoint: 1399, settings: { slidesToShow: 6 } },
+      { breakpoint: 992,  settings: { slidesToShow: 5 } },
+      { breakpoint: 768,  settings: { slidesToShow: 4 } },
+      { breakpoint: 575,  settings: { slidesToShow: 3 } },
+      { breakpoint: 424,  settings: { slidesToShow: 2 } },
+      { breakpoint: 359,  settings: { slidesToShow: 1 } },
     ],
   };
+
+  if (loading) {
+    return (
+      <div className="feature py-80 bg-gray-50">
+        <div className="container text-center">
+          <div className="spinner-border text-main-600" role="status">
+            <span className="visually-hidden">Loading featured spices...</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Fallback if no products
+  if (products.length === 0) {
+    return null;
+  }
+
   return (
-    <div className='feature' id='featureSection'>
-      <div className='container container-lg'>
-        <div className='position-relative arrow-center'>
-          <div className='flex-align'>
+    <div className="feature" id="featureSection">
+      <div className="container container-lg">
+        <div className="position-relative arrow-center">
+          <div className="flex-align gap-16">
             <button
-              type='button'
-              id='feature-item-wrapper-prev'
-              className='slick-prev slick-arrow flex-center rounded-circle bg-white text-xl hover-bg-main-600 hover-text-white transition-1'
+              type="button"
+              className="slick-prev slick-arrow flex-center rounded-circle bg-white text-xl hover-bg-main-600 hover-text-white transition-1"
             >
-              <i className='ph ph-caret-left' />
+              <i className="ph ph-caret-left" />
             </button>
             <button
-              type='button'
-              id='feature-item-wrapper-next'
-              className='slick-next slick-arrow flex-center rounded-circle bg-white text-xl hover-bg-main-600 hover-text-white transition-1'
+              type="button"
+              className="slick-next slick-arrow flex-center rounded-circle bg-white text-xl hover-bg-main-600 hover-text-white transition-1"
             >
-              <i className='ph ph-caret-right' />
+              <i className="ph ph-caret-right" />
             </button>
           </div>
-          <div className='feature-item-wrapper'>
+
+          <div className="feature-item-wrapper">
             <Slider {...settings}>
-              <div className='feature-item text-center'>
-                <div className='feature-item__thumb rounded-circle'>
-                  <Link href='/shop' className='w-100 h-100 flex-center'>
-                    <img src='assets/images/thumbs/feature-img1.png' alt='' />
-                  </Link>
-                </div>
-                <div className='feature-item__content mt-16'>
-                  <h6 className='text-lg mb-8'>
-                    <Link href='/shop' className='text-inherit'>
-                      Vegetables
+              {products.map((product) => (
+                <div key={product.slug} className="feature-item text-center px-8">
+                  <div className="feature-item__thumb rounded-circle overflow-hidden bg-white shadow-lg">
+                    <Link href={`/product/${product.slug}`} className="w-100 h-100 flex-center">
+                      {product.thumbnail ? (
+                        <Image
+                          src={product.thumbnail}
+                          alt={product.name}
+                          width={120}
+                          height={120}
+                          className="object-cover rounded-circle"
+                          priority
+                        />
+                      ) : (
+                        <div className="bg-gray-200 w-100 h-100 flex-center">
+                          <i className="ph ph-image text-4xl text-gray-400" />
+                        </div>
+                      )}
                     </Link>
-                  </h6>
-                  <span className='text-sm text-gray-400'>125+ Products</span>
+                  </div>
+                  <div className="feature-item__content mt-16">
+                    <h6 className="text-lg mb-4">
+                      <Link
+                        href={`/product/${product.slug}`}
+                        className="text-inherit hover-text-main-600 transition-2"
+                      >
+                        {product.name}
+                      </Link>
+                    </h6>
+                    <span className="text-sm text-gray-500">Premium Ceylon Spice</span>
+                  </div>
                 </div>
-              </div>
-              <div className='feature-item text-center'>
-                <div className='feature-item__thumb rounded-circle'>
-                  <Link href='/shop' className='w-100 h-100 flex-center'>
-                    <img src='assets/images/thumbs/feature-img2.png' alt='' />
-                  </Link>
-                </div>
-                <div className='feature-item__content mt-16'>
-                  <h6 className='text-lg mb-8'>
-                    <Link href='/shop' className='text-inherit'>
-                      Fish &amp; Meats
-                    </Link>
-                  </h6>
-                  <span className='text-sm text-gray-400'>125+ Products</span>
-                </div>
-              </div>
-              <div className='feature-item text-center'>
-                <div className='feature-item__thumb rounded-circle'>
-                  <Link href='/shop' className='w-100 h-100 flex-center'>
-                    <img src='assets/images/thumbs/feature-img3.png' alt='' />
-                  </Link>
-                </div>
-                <div className='feature-item__content mt-16'>
-                  <h6 className='text-lg mb-8'>
-                    <Link href='/shop' className='text-inherit'>
-                      Desserts
-                    </Link>
-                  </h6>
-                  <span className='text-sm text-gray-400'>125+ Products</span>
-                </div>
-              </div>
-              <div className='feature-item text-center'>
-                <div className='feature-item__thumb rounded-circle'>
-                  <Link href='/shop' className='w-100 h-100 flex-center'>
-                    <img src='assets/images/thumbs/feature-img4.png' alt='' />
-                  </Link>
-                </div>
-                <div className='feature-item__content mt-16'>
-                  <h6 className='text-lg mb-8'>
-                    <Link href='/shop' className='text-inherit'>
-                      Drinks &amp; Juice
-                    </Link>
-                  </h6>
-                  <span className='text-sm text-gray-400'>125+ Products</span>
-                </div>
-              </div>
-              <div className='feature-item text-center'>
-                <div className='feature-item__thumb rounded-circle'>
-                  <Link href='/shop' className='w-100 h-100 flex-center'>
-                    <img src='assets/images/thumbs/feature-img5.png' alt='' />
-                  </Link>
-                </div>
-                <div className='feature-item__content mt-16'>
-                  <h6 className='text-lg mb-8'>
-                    <Link href='/shop' className='text-inherit'>
-                      Animals Food
-                    </Link>
-                  </h6>
-                  <span className='text-sm text-gray-400'>125+ Products</span>
-                </div>
-              </div>
-              <div className='feature-item text-center'>
-                <div className='feature-item__thumb rounded-circle'>
-                  <Link href='/shop' className='w-100 h-100 flex-center'>
-                    <img src='assets/images/thumbs/feature-img6.png' alt='' />
-                  </Link>
-                </div>
-                <div className='feature-item__content mt-16'>
-                  <h6 className='text-lg mb-8'>
-                    <Link href='/shop' className='text-inherit'>
-                      Fresh Fruits
-                    </Link>
-                  </h6>
-                  <span className='text-sm text-gray-400'>125+ Products</span>
-                </div>
-              </div>
-              <div className='feature-item text-center'>
-                <div className='feature-item__thumb rounded-circle'>
-                  <Link href='/shop' className='w-100 h-100 flex-center'>
-                    <img src='assets/images/thumbs/feature-img7.png' alt='' />
-                  </Link>
-                </div>
-                <div className='feature-item__content mt-16'>
-                  <h6 className='text-lg mb-8'>
-                    <Link href='/shop' className='text-inherit'>
-                      Yummy Candy
-                    </Link>
-                  </h6>
-                  <span className='text-sm text-gray-400'>125+ Products</span>
-                </div>
-              </div>
-              <div className='feature-item text-center'>
-                <div className='feature-item__thumb rounded-circle'>
-                  <Link href='/shop' className='w-100 h-100 flex-center'>
-                    <img src='assets/images/thumbs/feature-img2.png' alt='' />
-                  </Link>
-                </div>
-                <div className='feature-item__content mt-16'>
-                  <h6 className='text-lg mb-8'>
-                    <Link href='/shop' className='text-inherit'>
-                      Fish &amp; Meats
-                    </Link>
-                  </h6>
-                  <span className='text-sm text-gray-400'>125+ Products</span>
-                </div>
-              </div>
-              <div className='feature-item text-center'>
-                <div className='feature-item__thumb rounded-circle'>
-                  <Link href='/shop' className='w-100 h-100 flex-center'>
-                    <img src='assets/images/thumbs/feature-img8.png' alt='' />
-                  </Link>
-                </div>
-                <div className='feature-item__content mt-16'>
-                  <h6 className='text-lg mb-8'>
-                    <Link href='/shop' className='text-inherit'>
-                      Dairy &amp; Eggs
-                    </Link>
-                  </h6>
-                  <span className='text-sm text-gray-400'>125+ Products</span>
-                </div>
-              </div>
-              <div className='feature-item text-center'>
-                <div className='feature-item__thumb rounded-circle'>
-                  <Link href='/shop' className='w-100 h-100 flex-center'>
-                    <img src='assets/images/thumbs/feature-img9.png' alt='' />
-                  </Link>
-                </div>
-                <div className='feature-item__content mt-16'>
-                  <h6 className='text-lg mb-8'>
-                    <Link href='/shop' className='text-inherit'>
-                      Snacks
-                    </Link>
-                  </h6>
-                  <span className='text-sm text-gray-400'>125+ Products</span>
-                </div>
-              </div>
-              <div className='feature-item text-center'>
-                <div className='feature-item__thumb rounded-circle'>
-                  <Link href='/shop' className='w-100 h-100 flex-center'>
-                    <img src='assets/images/thumbs/feature-img10.png' alt='' />
-                  </Link>
-                </div>
-                <div className='feature-item__content mt-16'>
-                  <h6 className='text-lg mb-8'>
-                    <Link href='/shop' className='text-inherit'>
-                      Frozen Foods
-                    </Link>
-                  </h6>
-                  <span className='text-sm text-gray-400'>125+ Products</span>
-                </div>
-              </div>
+              ))}
             </Slider>
           </div>
         </div>
