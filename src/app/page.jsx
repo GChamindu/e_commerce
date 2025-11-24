@@ -68,7 +68,7 @@ const page = () => {
       <HotDealsOne />
 
       {/* TopVendorsOne */}
-      <TopVendorsOne />
+      {/* <TopVendorsOne /> */}
 
       {/* BestSellsOne */}
       <BestSellsOne />
@@ -77,13 +77,13 @@ const page = () => {
       <DeliveryOne />
 
       {/* OrganicOne */}
-      <OrganicOne />
+      {/* <OrganicOne /> */}
 
       {/* ShortProductOne */}
       <ShortProductOne />
 
       {/* BrandOne */}
-      <BrandOne />
+      {/* <BrandOne /> */}
 
       {/* NewArrivalOne */}
       <NewArrivalOne />
