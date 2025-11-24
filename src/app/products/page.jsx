@@ -29,9 +29,12 @@ const page = () => {
       <HeaderTwo category={true} />
 
       {/* Breadcrumb */}
-      <Breadcrumb title={"Shop"} />
+      <Breadcrumb title={"Products"} />
 
       {/* ShopSection */}
+
+
+      
       <ShopSection />
 
       {/* ShippingTwo */}
