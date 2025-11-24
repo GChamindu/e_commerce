@@ -247,14 +247,14 @@ const ShopSection = () => {
               <div className="position-relative flex-align gap-16 flex-wrap">
                 {/* Grid / List Toggle */}
                 <div className="list-grid-btns flex-align gap-16">
-                  <button
+                  {/* <button
                     onClick={() => setGrid(false)}
                     className={`w-44 h-44 flex-center border rounded-6 text-2xl list-btn border-gray-100 ${
                       !grid && "border-main-600 text-white bg-main-600"
                     }`}
                   >
                     <i className="ph-bold ph-list-dashes"></i>
-                  </button>
+                  </button> */}
                   <button
                     onClick={() => setGrid(true)}
                     className={`w-44 h-44 flex-center border rounded-6 text-2xl grid-btn border-gray-100 ${
