@@ -1,54 +1,124 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
-
+import { notFound } from "next/navigation";
 import dynamic from "next/dynamic";
+
 const Slider = dynamic(() => import("react-slick"), { ssr: false });
 
-const ProductDetailsOne = () => {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
+export default function ProductDetailsOne({ slug }) {
 
-  useEffect(() => {
-    const loadCountdown = async () => {
-      const { getCountdown } = await import("../helper/Countdown");
-      setTimeLeft(getCountdown());
-    };
-    loadCountdown();
-    const interval = setInterval(() => {
-      loadCountdown();
-    }, 1000);
+// {  const [timeLeft, setTimeLeft] = useState({
+//     days: 0,
+//     hours: 0,
+//     minutes: 0,
+//     seconds: 0,
+//   });
 
-    return () => clearInterval(interval);
-  }, []);
-  const productImages = [
-    "assets/images/thumbs/product-details-thumb1.png",
-    "assets/images/thumbs/product-details-thumb2.png",
-    "assets/images/thumbs/product-details-thumb3.png",
-    "assets/images/thumbs/product-details-thumb2.png",
-  ];
 
-  // increment & decrement
+
+
+const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [quantity, setQuantity] = useState(1);
-  const incrementQuantity = () => setQuantity(quantity + 1);
-  const decrementQuantity = () =>
-    setQuantity(quantity > 1 ? quantity - 1 : quantity);
+  const [mainImage, setMainImage] = useState("");
 
-  const [mainImage, setMainImage] = useState(productImages[0]);
+  // Fetch product by slug
+  useEffect(() => {
+    async function fetchProduct() {
+      setLoading(true);
+      try {
+        const base = process.env.NEXT_PUBLIC_API_URL;
+        const res = await fetch(`${base}/api/products/slug/${slug}`, {
+          cache: "no-store",
+        });
 
-  const settingsThumbs = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    focusOnSelect: true,
-  };
+        if (!res.ok) throw new Error("Not found");
+        const json = await res.json();
+
+        if (json.success && json.data) {
+          setProduct(json.data);
+          setMainImage(json.data.thumbnail || "/assets/images/thumbs/product-details-thumb1.png");
+        } else {
+          notFound();
+        }
+      } catch (err) {
+        console.error("Product fetch error:", err);
+        notFound();
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    if (slug) fetchProduct();
+  }, [slug]);
+
+  const increment = () => setQuantity((q) => q + 1);
+  const decrement = () => setQuantity((q) => (q > 1 ? q - 1 : 1));
+
+  if (loading) {
+    return (
+      <section className="product-details py-80">
+        <div className="container container-lg text-center py-80">
+          <div className="spinner-border text-main-600" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (!product) notFound();
+
+  const price = Number(product.price) || 0;
+  const offerPrice = product.offer_price ? Number(product.offer_price) : null;
+  const finalPrice = product.is_offer && offerPrice ? offerPrice : price;
+
+  const allImages = product.images && product.images.length > 0
+    ? [product.thumbnail, ...product.images.filter(img => img !== product.thumbnail)]
+    : [product.thumbnail || "/assets/images/thumbs/product-details-thumb1.png"];
+
+
+
+
+
+  // useEffect(() => {
+  //   const loadCountdown = async () => {
+  //     const { getCountdown } = await import("../helper/Countdown");
+  //     setTimeLeft(getCountdown());
+  //   };
+  //   loadCountdown();
+  //   const interval = setInterval(() => {
+  //     loadCountdown();
+  //   }, 1000);
+
+  //   return () => clearInterval(interval);
+  // }, []);
+  // const productImages = [
+  //   "assets/images/thumbs/product-details-thumb1.png",
+  //   "assets/images/thumbs/product-details-thumb2.png",
+  //   "assets/images/thumbs/product-details-thumb3.png",
+  //   "assets/images/thumbs/product-details-thumb2.png",
+  // ];
+
+  // // increment & decrement
+  // const [quantity, setQuantity] = useState(1);
+  // const incrementQuantity = () => setQuantity(quantity + 1);
+  // const decrementQuantity = () =>
+  //   setQuantity(quantity > 1 ? quantity - 1 : quantity);
+
+  // const [mainImage, setMainImage] = useState(productImages[0]);
+
+  // const settingsThumbs = {
+  //   dots: false,
+  //   infinite: true,
+  //   speed: 500,
+  //   slidesToShow: 4,
+  //   slidesToScroll: 1,
+  //   focusOnSelect: true,
+  // };
   return (
     <section className="product-details py-80">
       <div className="container container-lg">
@@ -87,7 +157,7 @@ const ProductDetailsOne = () => {
               </div>
               <div className="col-xl-6">
                 <div className="product-details__content">
-                  <h5 className="mb-12">ProductName</h5>
+                  <h5 className="mb-12">{product.name}</h5>
                   <div className="flex-align flex-wrap gap-12">
                     <div className="flex-align gap-12 flex-wrap">
                       <div className="flex-align gap-8">
@@ -1067,4 +1137,3 @@ const ProductDetailsOne = () => {
   );
 };
 
-export default ProductDetailsOne;

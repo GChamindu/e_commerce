@@ -23,10 +23,10 @@ import Preloader from "@/helper/Preloader";
 import ScrollToTopInit from "@/helper/ScrollToTopInit";
 
 export const metadata = {
-  title: "MarketPro - E-commerce Next JS Template",
-  description:
-    "MarketPro is a comprehensive and versatile Next JS template designed for e-commerce platforms, specifically tailored for multi vendor marketplaces. With its modern design and extensive feature set, MarketPro provides everything you need to create a robust and user-friendly online marketplace..",
-};
+title: "Zeloan Spice – Buy 100% Pure Ceylon Spices Online | Premium Cinnamon, Pepper & More",
+
+description:
+"Shop authentic Ceylon spices directly from Sri Lanka. Premium organic cinnamon, black pepper, cloves, cardamom & spice powders. Export quality, vacuum-packed freshness, worldwide shipping.",};
 
 const page = () => {
   return (
