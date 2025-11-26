@@ -11,11 +11,12 @@ const BannerOne = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
+
   useEffect(() => {
     const fetchBanners = async () => {
       try {
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/banners`, {
-          next: { revalidate: 3600 }, // Cache 1 hour
+          next: { revalidate: 3600 },
         });
 
         if (!res.ok) throw new Error("Failed to load banners");
