@@ -3,17 +3,20 @@ import RouteScrollToTop from "@/helper/RouteScrollToTop";
 import "./font.css";
 import "./globals.scss";
 import PhosphorIconInit from "@/helper/PhosphorIconInit";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export const metadata = {
-  title: "Digital Market Place NEXT Js Template",
+  title:
+    "Zeloan Spice – Buy 100% Pure Ceylon Spices Online | Premium Cinnamon, Pepper & More",
   description:
-    "DpMarket – Digital Products Marketplace NEXT JS Template – A versatile and meticulously designed set of templates crafted to elevate your Digital Products Marketplace content and experiences.",
+    "Shop authentic Ceylon spices directly from Sri Lanka. Premium organic cinnamon, black pepper, cloves, cardamom & spice powders. Export quality, vacuum-packed freshness, worldwide shipping.",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='en'>
+    <html lang="en">
       <body suppressHydrationWarning={true}>
+        <GoogleAnalytics />
         <BootstrapInit />
         <PhosphorIconInit />
         <RouteScrollToTop />
