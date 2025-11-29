@@ -2,6 +2,7 @@ import BottomFooter from "@/components/BottomFooter";
 import Breadcrumb from "@/components/Breadcrumb";
 import Contact from "@/components/Contact";
 import FooterTwo from "@/components/FooterTwo";
+import HeaderOne from "@/components/HeaderOne";
 import HeaderTwo from "@/components/HeaderTwo";
 import ShippingOne from "@/components/ShippingOne";
 import ColorInit from "@/helper/ColorInit";
@@ -27,7 +28,7 @@ const page = () => {
       <Preloader />
 
       {/* HeaderTwo */}
-      <HeaderTwo category={true} />
+      <HeaderOne category={false} />
 
       {/* Breadcrumb */}
       <Breadcrumb title={"Contact"} />

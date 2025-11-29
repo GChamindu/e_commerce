@@ -290,7 +290,7 @@ const HeaderOne = () => {
               </li>
 
               {/* Pages Menu */}
-              <li
+              {/* <li
                 onClick={() => handleMenuClick(2)}
                 className={`on-hover-item nav-menu__item has-submenu ${
                   activeIndex === 2 ? "d-block" : ""
@@ -356,7 +356,7 @@ const HeaderOne = () => {
                     </Link>
                   </li>
                 </ul>
-              </li>
+              </li> */}
 
               {/* Vendors Menu */}
               <li
@@ -368,7 +368,7 @@ const HeaderOne = () => {
                 <span className="badge-notification bg-tertiary-600 text-white text-sm py-2 px-8 rounded-4">
                   New
                 </span>
-                <Link href="#" className="nav-menu__link">
+                <Link href="/products" className="nav-menu__link">
                   Products
                 </Link>
                 {/* <ul
@@ -1306,7 +1306,7 @@ const HeaderOne = () => {
       
 
 
-                  <li className="on-hover-item nav-menu__item has-submenu">
+                  {/* <li className="on-hover-item nav-menu__item has-submenu">
                     <span className="badge-notification bg-warning-600 text-white text-sm py-2 px-8 rounded-4">
                       New
                     </span>
@@ -1374,16 +1374,16 @@ const HeaderOne = () => {
                         </Link>
                       </li>
                     </ul>
-                  </li>
+                  </li> */}
                   <li className="on-hover-item nav-menu__item">
                     <span className="badge-notification bg-tertiary-600 text-white text-sm py-2 px-8 rounded-4">
                       New
                     </span>
-                    <Link href="#" className="nav-menu__link">
+                    <Link href="/products" className="nav-menu__link">
                       Products
                     </Link>
 
-                    <ul className="on-hover-dropdown common-dropdown nav-submenu scroll-sm">
+                    {/* <ul className="on-hover-dropdown common-dropdown nav-submenu scroll-sm">
                       <li className="common-dropdown__item nav-submenu__item">
                         <Link
                           href="/vendor"
@@ -1429,9 +1429,9 @@ const HeaderOne = () => {
                           Vendors Two Details
                         </Link>
                       </li>
-                    </ul>
+                    </ul> */}
                   </li>
-                  <li className="on-hover-item nav-menu__item has-submenu">
+                  {/* <li className="on-hover-item nav-menu__item has-submenu">
                     <Link href="#" className="nav-menu__link">
                       Blog
                     </Link>
@@ -1461,7 +1461,7 @@ const HeaderOne = () => {
                         </Link>
                       </li>
                     </ul>
-                  </li>
+                  </li> */}
                   <li className="nav-menu__item">
                     <Link
                       href="/contact"
