@@ -12,9 +12,12 @@ const ProductDetailsOne = () => {
   const [loading, setLoading] = useState(true);
   const [mainImage, setMainImage] = useState("");
   const [quantity, setQuantity] = useState(1);
-  const [meta, setMeta] = useState(null); // ← SEO meta from Laravel
+  const [meta, setMeta] = useState(null);
 
-  // Fetch product by slug
+  // Current page URL (for sharing)
+  const currentUrl = typeof window !== "undefined" ? window.location.href : "";
+
+  // Fetch product
   useEffect(() => {
     if (!slug) return;
 
@@ -22,26 +25,21 @@ const ProductDetailsOne = () => {
       setLoading(true);
       try {
         const base = process.env.NEXT_PUBLIC_API_URL;
-        const res = await fetch(`${base}/api/products/${slug}`, {
-          cache: "no-store",
-        });
+        const res = await fetch(`${base}/api/products/${slug}`, { cache: "no-store" });
 
         if (!res.ok) throw new Error("Product not found");
-
         const json = await res.json();
 
         if (json.success && json.data) {
           setProduct(json.data);
-          setMeta(json.meta); // ← This powers all SEO
+          setMeta(json.meta);
 
-          // Set main image
           const firstImage =
             json.data.thumbnail ||
-            (json.data.images && json.data.images[0]) ||
+            (json.data.images?.[0]) ||
             "/assets/images/thumbs/product-details-thumb1.png";
           setMainImage(firstImage);
 
-          // Update document title & description (fallback + social)
           document.title = json.meta?.title || json.data.name;
           const descMeta = document.querySelector('meta[name="description"]');
           if (descMeta && json.meta?.description) {
@@ -58,35 +56,17 @@ const ProductDetailsOne = () => {
     fetchProduct();
   }, [slug]);
 
-  // Quantity controls
-  const incrementQuantity = () => setQuantity((q) => q + 1);
-  const decrementQuantity = () => setQuantity((q) => (q > 1 ? q - 1 : 1));
+  const incrementQuantity = () => setQuantity(q => q + 1);
+  const decrementQuantity = () => setQuantity(q => q > 1 ? q - 1 : 1);
 
-  // CORRECT: Build all images array (thumbnail + additional images)
   const allImages = React.useMemo(() => {
     if (!product) return [];
-
     const images = [];
-
-    // Add thumbnail first (if exists)
-    if (product.thumbnail) {
-      images.push(product.thumbnail);
+    if (product.thumbnail) images.push(product.thumbnail);
+    if (Array.isArray(product.images)) {
+      product.images.forEach(url => url && !images.includes(url) && images.push(url));
     }
-
-    // Add all additional images (already full URLs from backend!)
-    if (Array.isArray(product.images) && product.images.length > 0) {
-      product.images.forEach((url) => {
-        if (url && !images.includes(url)) {
-          images.push(url);
-        }
-      });
-    }
-
-    // Fallback image if nothing
-    if (images.length === 0) {
-      images.push("/assets/images/thumbs/product-details-thumb1.png");
-    }
-
+    if (images.length === 0) images.push("/assets/images/thumbs/product-details-thumb1.png");
     return images;
   }, [product]);
 
@@ -98,45 +78,72 @@ const ProductDetailsOne = () => {
     slidesToScroll: 1,
     focusOnSelect: true,
     arrows: true,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: { slidesToShow: 3 },
-      },
-    ],
+    responsive: [{ breakpoint: 768, settings: { slidesToShow: 3 } }],
   };
 
-  // Safe sections parsing
   const sections = React.useMemo(() => {
     if (!product?.sections) return {};
+    if (typeof product.sections === "object" && product.sections !== null) return product.sections;
+    try { return JSON.parse(product.sections); } catch { return {}; }
+  }, [product]);
 
-    if (typeof product.sections === "object" && product.sections !== null) {
-      return product.sections;
-    }
+  // WhatsApp Order Button
+const handleWhatsAppOrder = () => {
+  if (!product) return;
 
-    if (typeof product.sections === "string") {
+  const phoneNumber = "94714944005"; // Your number: +94 71 494 4005 (without + or spaces)
+  const message = `Hi! I want to order:\n\n*${product.name}*\n${product.short_description}\n\nPrice: Rs. ${product.price}\n🔗 ${currentUrl}`;
+
+  // WhatsApp Web/Desktop link with pre-filled message
+  const waUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+  window.open(waUrl, "_blank", "noopener,noreferrer");
+};
+
+  // Native Share Button (Facebook, WhatsApp, Twitter, etc.)
+ const handleShare = async () => {
+  if (!product) return;
+
+  const shareText = `${product.name}\nRs. ${product.price}\n${product.short_description || "Premium Ceylon Spice from Sri Lanka"}\n🔗 ${currentUrl}`;
+  const imageUrl = mainImage || product.thumbnail || "";
+
+  const shareData = {
+    title: product.name,
+    text: shareText,
+    url: currentUrl,
+  };
+    // If browser supports Web Share API (mobile mostly)
+    if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
       try {
-        return JSON.parse(product.sections);
-      } catch (e) {
-        console.error("Invalid sections JSON:", e);
-        return {};
+        await navigator.share(shareData);
+        return;
+      } catch (err) {
+        console.log("Share failed, falling back...");
       }
     }
 
-    return {};
-  }, [product]);
+    // Fallback: Show popup with options
+    const text = `${product.name}\n${product.short_description}\n\n🔗 ${currentUrl}`;
+    const fb = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`;
+    const wa = `https://wa.me/?text=${encodeURIComponent(text)}`;
+    const twitter = `https://twitter.com/intent/tweet?text=${encodeURIComponent(product.name)}&url=${encodeURIComponent(currentUrl)}`;
 
-  // Loading state
-  if (loading) {
-    return <div className="py-80 text-center">Loading product...</div>;
-  }
+    const popup = window.open("", "share", "width=600,height=400");
+    popup.document.write(`
+      <style>body{font-family:sans-serif;padding:20px;text-align:center;}</style>
+      <h3>Share ${product.name}</h3>
+      <p>${product.short_description}</p>
+      <p><img src="${mainImage}" width="200" style="border-radius:12px;margin:10px 0;" /></p>
+      <p>
+        <a href="${wa}" target="_blank" style="margin:10px;display:inline-block;padding:12px 20px;background:#25D366;color:white;border-radius:8px;text-decoration:none;">WhatsApp</a>
+        <a href="${fb}" target="_blank" style="margin:10px;display:inline-block;padding:12px 20px;background:#1877F2;color:white;border-radius:8px;text-decoration:none;">Facebook</a>
+        <a href="${twitter}" target="_blank" style="margin:10px;display:inline-block;padding:12px 20px;background:#1DA1F2;color:white;border-radius:8px;text-decoration:none;">Twitter</a>
+      </p>
+    `);
+  };
 
-  // Not found
-  if (!product) {
-    return (
-      <div className="py-80 text-center text-danger">Product not found</div>
-    );
-  }
+  if (loading) return <div className="py-80 text-center">Loading product...</div>;
+  if (!product) return <div className="py-80 text-center text-danger">Product not found</div>;
 
   // Rest of your component continues here...
   return (
@@ -230,9 +237,12 @@ const ProductDetailsOne = () => {
                       <h4 className="mb-0">Rs. {product.price}</h4>
                       {/* <span className="text-md text-gray-500">$38.00</span> */}
                     </div>
-                    <Link href="#" className="btn btn-main rounded-pill">
-                      Order on What'sApp
-                    </Link>
+                   <button
+                      onClick={handleWhatsAppOrder}
+                      className="btn btn-main rounded-pill d-flex align-items-center gap-8"
+                    >
+                      <i className="ph ph-whatsapp-logo"></i> Order on WhatsApp
+                    </button>
                   </div>
                   <span className="mt-32 pt-32 text-gray-700 border-top border-gray-100 d-block" />
 
@@ -282,12 +292,21 @@ const ProductDetailsOne = () => {
                       >
                         <i className="ph ph-shuffle" />
                       </Link>
-                      <Link
+                      {/* <Link
                         href="#"
                         className="w-52 h-52 bg-main-50 text-main-600 text-xl hover-bg-main-600 hover-text-white flex-center rounded-circle"
                       >
                         <i className="ph ph-share-network" />
-                      </Link>
+                      </Link> */}
+
+
+                      <button
+                        onClick={handleShare}
+                        className="w-52 h-52 bg-main-50 text-main-600 text-xl hover-bg-main-600 hover-text-white flex-center rounded-circle transition-all"
+                        title="Share this product"
+                      >
+                        <i className="ph ph-share-network" />
+                      </button>
                     </div>
                   </div>
                   <span className="mt-32 pt-32 text-gray-700 border-top border-gray-100 d-block" />
