@@ -1487,7 +1487,7 @@ const HeaderOne = () => {
                 <div className="d-flex text-32">
                   <i className="ph ph-phone-call" />
                 </div>
-                01- 234 567 890
+                +94 71 494 4005
               </a>
               <div className="me-16 d-lg-none d-block">
                 <div className="flex-align flex-wrap gap-12">

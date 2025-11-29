@@ -35,17 +35,17 @@ const FooterOne = () => {
               </span>
               <div className='flex-align gap-16 flex-wrap'>
                 <a
-                  href='tel:+00123456789'
+                  href='tel:+94 71 494 4005123456789'
                   className='text-md text-gray-900 hover-text-main-600'
                 >
-                  +00 123 456 789
+                  +94 71 494 40059
                 </a>
                 <span className='text-md text-main-600 '>or</span>
                 <Link
-                  href='tel:+00987654012'
+                  href='tel:+94 71 494 4005987654012'
                   className='text-md text-gray-900 hover-text-main-600'
                 >
-                  +00 987 654 012
+                  +94 71 494 4005
                 </Link>
               </div>
             </div>

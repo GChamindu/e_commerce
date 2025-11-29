@@ -24,10 +24,10 @@ const FooterThree = () => {
                   <i className='ph-fill ph-phone-call' />
                 </span>
                 <a
-                  href='tel:+00123456789'
+                  href='tel:+94 71 494 4005123456789'
                   className='text-md text-gray-900 hover-text-main-600'
                 >
-                  +00 123 456 789
+                  +94 71 494 40059
                 </a>
               </div>
               <div className='flex-align gap-16 mb-16'>
@@ -383,7 +383,7 @@ const FooterThree = () => {
         <div className='container container-lg'>
           <div className='bottom-footer__inner flex-between flex-wrap gap-16 py-16'>
             <p className='bottom-footer__text '>
-              Zelone Spice eCommerce © 2024. All Rights Reserved
+              Zelone Spice Sri Lanka © 2024. All Rights Reserved
             </p>
             <div className='flex-align gap-8 flex-wrap '>
               <span className='text-heading text-sm'>We Are Accepting</span>
