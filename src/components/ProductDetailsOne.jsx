@@ -30,10 +30,14 @@ const ProductDetailsOne = () => {
 
         if (json.success && json.data) {
           setProduct(json.data);
-          setMainImage(
+
+          // Set first image as main (thumbnail or first gallery image)
+          const firstImage =
             json.data.thumbnail ||
-              "/assets/images/thumbs/product-details-thumb1.png"
-          );
+            (json.data.images && json.data.images[0]) ||
+            "/assets/images/thumbs/product-details-thumb1.png";
+
+          setMainImage(firstImage);
         }
       } catch (err) {
         console.error("Failed to load product:", err);
@@ -49,13 +53,33 @@ const ProductDetailsOne = () => {
   const incrementQuantity = () => setQuantity((q) => q + 1);
   const decrementQuantity = () => setQuantity((q) => (q > 1 ? q - 1 : 1));
 
-  // All images (thumbnail + gallery)
-  const allImages = product
-    ? [
-        product.thumbnail,
-        ...(product.images?.map((img) => img.image_url) || []),
-      ].filter(Boolean)
-    : ["/assets/images/thumbs/product-details-thumb1.png"];
+  // CORRECT: Build all images array (thumbnail + additional images)
+  const allImages = React.useMemo(() => {
+    if (!product) return [];
+
+    const images = [];
+
+    // Add thumbnail first (if exists)
+    if (product.thumbnail) {
+      images.push(product.thumbnail);
+    }
+
+    // Add all additional images (already full URLs from backend!)
+    if (Array.isArray(product.images) && product.images.length > 0) {
+      product.images.forEach((url) => {
+        if (url && !images.includes(url)) {
+          images.push(url);
+        }
+      });
+    }
+
+    // Fallback image if nothing
+    if (images.length === 0) {
+      images.push("/assets/images/thumbs/product-details-thumb1.png");
+    }
+
+    return images;
+  }, [product]);
 
   const settingsThumbs = {
     dots: false,
@@ -64,39 +88,43 @@ const ProductDetailsOne = () => {
     slidesToShow: 4,
     slidesToScroll: 1,
     focusOnSelect: true,
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: { slidesToShow: 3 },
+      },
+    ],
   };
 
-  // CORRECT & SAFE sections parsing (this fixes your error)
-  const sections = (() => {
+  // Safe sections parsing
+  const sections = React.useMemo(() => {
     if (!product?.sections) return {};
 
-    // Laravel with $casts['sections' => 'array'] → already object
     if (typeof product.sections === "object" && product.sections !== null) {
       return product.sections;
     }
 
-    // Sometimes it comes as string (no cast or old data)
     if (typeof product.sections === "string") {
       try {
         return JSON.parse(product.sections);
       } catch (e) {
-        console.error("Invalid JSON in product.sections:", e);
+        console.error("Invalid sections JSON:", e);
         return {};
       }
     }
 
     return {};
-  })();
+  }, [product]);
 
-  // Loading & Not Found
+  // Loading state
   if (loading) {
     return <div className="py-80 text-center">Loading product...</div>;
   }
 
+  // Not found
   if (!product) {
-    return (
-      <div className="py-80 text-center text-danger">Product not found</div>
-    );
+    return <div className="py-80 text-center text-danger">Product not found</div>;
   }
 
   // Rest of your component continues here...
@@ -116,25 +144,31 @@ const ProductDetailsOne = () => {
                     </div>
                   </div>
                   {/* Product Thumbnail Slider */}
-                  {allImages.length > 1 && (
+
+
+
+                 {allImages.length > 1 && (
                     <div className="mt-24">
                       <div className="product-details__images-slider">
                         <Slider {...settingsThumbs}>
                           {allImages.map((image, index) => (
                             <div
                               key={index}
-                              className={`center max-w-120 max-h-120 h-100 flex-center border rounded-16 p-8 cursor-pointer transition-all
-              ${
-                mainImage === image
-                  ? "border-main-600 shadow-lg"
-                  : "border-gray-100 hover:border-main-200"
-              }`}
+                              className={`center max-w-120 max-h-120 h-100 flex-center border rounded-16 p-8 cursor-pointer transition-all mx-2
+                                ${
+                                  mainImage === image
+                                    ? "border-main-600 shadow-lg ring-4 ring-main-100"
+                                    : "border-gray-100 hover:border-main-200"
+                                }`}
                               onClick={() => setMainImage(image)}
                             >
                               <img
                                 src={image}
-                                alt={`Product thumbnail ${index + 1}`}
+                                alt={`Thumbnail ${index + 1}`}
                                 className="max-w-full max-h-full object-cover rounded-8"
+                                onError={(e) => {
+                                  e.target.src = "/assets/images/thumbs/product-details-thumb1.png";
+                                }}
                               />
                             </div>
                           ))}
@@ -142,6 +176,9 @@ const ProductDetailsOne = () => {
                       </div>
                     </div>
                   )}
+
+
+
                 </div>
               </div>
               <div className="col-xl-6">
@@ -398,13 +435,9 @@ const ProductDetailsOne = () => {
                   <div className="mb-40">
                     <h6 className="mb-24">Product Description</h6>
                     <p>
-                      Wherever celebrations and good times happen, the LAY'S
-                      brand will be there just as it has been for more than 75
-                      years. With flavors almost as rich as our history, we have
-                      a chip or crisp flavor guaranteed to bring a smile on your
-                      face.{" "}
+                      {product.short_description}.{" "}
                     </p>
-                    <p>
+                    {/* <p>
                       Morbi ut sapien vitae odio accumsan gravida. Morbi vitae
                       erat auctor, eleifend nunc a, lobortis neque. Praesent
                       aliquam dignissim viverra. Maecenas lacus odio, feugiat eu
@@ -416,7 +449,7 @@ const ProductDetailsOne = () => {
                       vestibulum vulputate, lorem orci convallis quam, sit amet
                       consequat nulla felis pharetra lacus. Duis semper erat
                       mauris, sed egestas purus commodo vel.
-                    </p>
+                    </p> */}
                     <ul className="list-inside mt-32 ms-16">
                       <li className="text-gray-400 mb-4">
                         8.0 oz. bag of LAY'S Classic Potato Chips
@@ -431,8 +464,11 @@ const ProductDetailsOne = () => {
                         Gluten free product
                       </li>
                     </ul>
+
+
+
                     <ul className="mt-32">
-                      <li className="text-gray-400 mb-4">Made in USA</li>
+                      <li className="text-gray-400 mb-4">Made in Sri Lanka</li>
                       <li className="text-gray-400 mb-4">Ready To Eat.</li>
                     </ul>
                   </div>
