@@ -5,7 +5,7 @@ const WhyBecomeSeller = () => {
     <section className='why-seller py-80'>
       <div className='container'>
         <div className='section-heading text-center mx-auto'>
-          <h5 className=''>Why become a seller on Marketpro?</h5>
+          <h5 className=''>Why become a seller on Zelone Spice?</h5>
           <span className='text-gray-600'>
             More than half the units sold in our stores from independent
             sellers.

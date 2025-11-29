@@ -100,7 +100,7 @@ const OrganicOne = () => {
                 >
                   <img
                     src='assets/images/thumbs/product-img20.png'
-                    alt='marketpro'
+                    alt='Zelone Spice'
                   />
                 </Link>
                 <div className='product-card__content mt-12'>
@@ -152,7 +152,7 @@ const OrganicOne = () => {
                 >
                   <img
                     src='assets/images/thumbs/product-img21.png'
-                    alt='marketpro'
+                    alt='Zelone Spice'
                   />
                 </Link>
                 <div className='product-card__content mt-12'>
@@ -204,7 +204,7 @@ const OrganicOne = () => {
                 >
                   <img
                     src='assets/images/thumbs/product-img22.png'
-                    alt='marketpro'
+                    alt='Zelone Spice'
                   />
                 </Link>
                 <div className='product-card__content mt-12'>
@@ -256,7 +256,7 @@ const OrganicOne = () => {
                 >
                   <img
                     src='assets/images/thumbs/product-img23.png'
-                    alt='marketpro'
+                    alt='Zelone Spice'
                   />
                 </Link>
                 <div className='product-card__content mt-12'>
@@ -308,7 +308,7 @@ const OrganicOne = () => {
                 >
                   <img
                     src='assets/images/thumbs/product-img24.png'
-                    alt='marketpro'
+                    alt='Zelone Spice'
                   />
                 </Link>
                 <div className='product-card__content mt-12'>
@@ -360,7 +360,7 @@ const OrganicOne = () => {
                 >
                   <img
                     src='assets/images/thumbs/product-img25.png'
-                    alt='marketpro'
+                    alt='Zelone Spice'
                   />
                 </Link>
                 <div className='product-card__content mt-12'>
@@ -412,7 +412,7 @@ const OrganicOne = () => {
                 >
                   <img
                     src='assets/images/thumbs/product-img21.png'
-                    alt='marketpro'
+                    alt='Zelone Spice'
                   />
                 </Link>
                 <div className='product-card__content mt-12'>

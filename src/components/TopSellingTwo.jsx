@@ -72,7 +72,7 @@ const TopSellingTwo = () => {
             <div className='position-relative rounded-16 bg-light-purple overflow-hidden p-28 z-1 text-center h-100'>
               <img
                 src='assets/images/bg/recommended-bg.png'
-                alt='marketpro'
+                alt='Zelone Spice'
                 className='position-absolute inset-block-start-0 inset-inline-start-0 z-n1 w-100 h-100 cover-img'
               />
               <div className='py-xl-4 text-center'>
@@ -89,7 +89,7 @@ const TopSellingTwo = () => {
               </div>
               <img
                 src='assets/images/thumbs/recommended-img.png'
-                alt='marketpro'
+                alt='Zelone Spice'
                 className='mt-48 d-xxl-block d-none'
               />
             </div>
@@ -122,7 +122,7 @@ const TopSellingTwo = () => {
                         </span>
                         <img
                           src='assets/images/thumbs/product-two-img1.png'
-                          alt='marketpro'
+                          alt='Zelone Spice'
                           className='w-auto max-w-unset'
                         />
                       </Link>
@@ -165,7 +165,7 @@ const TopSellingTwo = () => {
                           </span>
                         </div>
                         <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                          Fulfilled by Marketpro
+                          Fulfilled by Zelone Spice
                         </span>
                         <div className='product-card__price mt-16 mb-30'>
                           <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -196,7 +196,7 @@ const TopSellingTwo = () => {
                         </span>
                         <img
                           src='assets/images/thumbs/product-two-img2.png'
-                          alt='marketpro'
+                          alt='Zelone Spice'
                           className='w-auto max-w-unset'
                         />
                       </Link>
@@ -239,7 +239,7 @@ const TopSellingTwo = () => {
                           </span>
                         </div>
                         <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                          Fulfilled by Marketpro
+                          Fulfilled by Zelone Spice
                         </span>
                         <div className='product-card__price mt-16 mb-30'>
                           <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -270,7 +270,7 @@ const TopSellingTwo = () => {
                         </span>
                         <img
                           src='assets/images/thumbs/product-two-img3.png'
-                          alt='marketpro'
+                          alt='Zelone Spice'
                           className='w-auto max-w-unset'
                         />
                       </Link>
@@ -313,7 +313,7 @@ const TopSellingTwo = () => {
                           </span>
                         </div>
                         <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                          Fulfilled by Marketpro
+                          Fulfilled by Zelone Spice
                         </span>
                         <div className='product-card__price mt-16 mb-30'>
                           <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -344,7 +344,7 @@ const TopSellingTwo = () => {
                         </span>
                         <img
                           src='assets/images/thumbs/product-two-img4.png'
-                          alt='marketpro'
+                          alt='Zelone Spice'
                           className='w-auto max-w-unset'
                         />
                       </Link>
@@ -387,7 +387,7 @@ const TopSellingTwo = () => {
                           </span>
                         </div>
                         <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                          Fulfilled by Marketpro
+                          Fulfilled by Zelone Spice
                         </span>
                         <div className='product-card__price mt-16 mb-30'>
                           <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -418,7 +418,7 @@ const TopSellingTwo = () => {
                         </span>
                         <img
                           src='assets/images/thumbs/product-two-img2.png'
-                          alt='marketpro'
+                          alt='Zelone Spice'
                           className='w-auto max-w-unset'
                         />
                       </Link>
@@ -461,7 +461,7 @@ const TopSellingTwo = () => {
                           </span>
                         </div>
                         <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                          Fulfilled by Marketpro
+                          Fulfilled by Zelone Spice
                         </span>
                         <div className='product-card__price mt-16 mb-30'>
                           <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>

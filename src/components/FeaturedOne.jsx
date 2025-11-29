@@ -86,7 +86,7 @@ const FeaturedOne = () => {
                             </span>
                             <img
                               src='assets/images/thumbs/product-two-img2.png'
-                              alt='marketpro'
+                              alt='Zelone Spice'
                               className='w-auto max-w-unset'
                             />
                           </Link>
@@ -152,7 +152,7 @@ const FeaturedOne = () => {
                             </span>
                             <img
                               src='assets/images/thumbs/product-two-img3.png'
-                              alt='marketpro'
+                              alt='Zelone Spice'
                               className='w-auto max-w-unset'
                             />
                           </Link>
@@ -222,7 +222,7 @@ const FeaturedOne = () => {
                             </span>
                             <img
                               src='assets/images/thumbs/product-two-img4.png'
-                              alt='marketpro'
+                              alt='Zelone Spice'
                               className='w-auto max-w-unset'
                             />
                           </Link>
@@ -288,7 +288,7 @@ const FeaturedOne = () => {
                             </span>
                             <img
                               src='assets/images/thumbs/product-two-img4.png'
-                              alt='marketpro'
+                              alt='Zelone Spice'
                               className='w-auto max-w-unset'
                             />
                           </Link>
@@ -358,7 +358,7 @@ const FeaturedOne = () => {
                             </span>
                             <img
                               src='assets/images/thumbs/product-two-img2.png'
-                              alt='marketpro'
+                              alt='Zelone Spice'
                               className='w-auto max-w-unset'
                             />
                           </Link>
@@ -424,7 +424,7 @@ const FeaturedOne = () => {
                             </span>
                             <img
                               src='assets/images/thumbs/product-two-img3.png'
-                              alt='marketpro'
+                              alt='Zelone Spice'
                               className='w-auto max-w-unset'
                             />
                           </Link>
@@ -488,7 +488,7 @@ const FeaturedOne = () => {
             <div className='position-relative rounded-16 bg-light-purple overflow-hidden p-28 pb-0 z-1 text-center h-100'>
               <img
                 src='assets/images/bg/featured-product-bg.png'
-                alt='marketpro'
+                alt='Zelone Spice'
                 className='position-absolute inset-block-start-0 inset-inline-start-0 z-n1 w-100 h-100 cover-img'
               />
               <div className='py-xl-4 text-center'>
@@ -515,7 +515,7 @@ const FeaturedOne = () => {
               </div>
               <img
                 src='assets/images/thumbs/featured-product-img.png'
-                alt='marketpro'
+                alt='Zelone Spice'
                 className='d-xxl-inline-flex d-none'
               />
             </div>

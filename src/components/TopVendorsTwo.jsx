@@ -66,7 +66,7 @@ const TopVendorsTwo = () => {
                 <div className=''>
                   <img
                     src='assets/images/thumbs/vendor-logo1.png'
-                    alt='marketpro'
+                    alt='Zelone Spice'
                     className='vendor-card__logo m-12'
                   />
                   <h6 className='title mt-32 text-lg'>Organic Market</h6>
@@ -87,7 +87,7 @@ const TopVendorsTwo = () => {
                         <div className='vendor-card__item bg-white rounded-circle flex-center'>
                           <img
                             src='assets/images/thumbs/vendor-two-img1.png'
-                            alt='marketpro'
+                            alt='Zelone Spice'
                           />
                         </div>
                       </div>
@@ -95,7 +95,7 @@ const TopVendorsTwo = () => {
                         <div className='vendor-card__item bg-white rounded-circle flex-center'>
                           <img
                             src='assets/images/thumbs/vendor-two-img2.png'
-                            alt='marketpro'
+                            alt='Zelone Spice'
                           />
                         </div>
                       </div>
@@ -103,7 +103,7 @@ const TopVendorsTwo = () => {
                         <div className='vendor-card__item bg-white rounded-circle flex-center'>
                           <img
                             src='assets/images/thumbs/vendor-two-img3.png'
-                            alt='marketpro'
+                            alt='Zelone Spice'
                           />
                         </div>
                       </div>
@@ -111,7 +111,7 @@ const TopVendorsTwo = () => {
                         <div className='vendor-card__item bg-white rounded-circle flex-center'>
                           <img
                             src='assets/images/thumbs/vendor-two-img4.png'
-                            alt='marketpro'
+                            alt='Zelone Spice'
                           />
                         </div>
                       </div>
@@ -119,7 +119,7 @@ const TopVendorsTwo = () => {
                         <div className='vendor-card__item bg-white rounded-circle flex-center'>
                           <img
                             src='assets/images/thumbs/vendor-two-img5.png'
-                            alt='marketpro'
+                            alt='Zelone Spice'
                           />
                         </div>
                       </div>
@@ -127,7 +127,7 @@ const TopVendorsTwo = () => {
                         <div className='vendor-card__item bg-white rounded-circle flex-center'>
                           <img
                             src='assets/images/thumbs/vendor-two-img6.png'
-                            alt='marketpro'
+                            alt='Zelone Spice'
                           />
                         </div>
                       </div>
@@ -141,7 +141,7 @@ const TopVendorsTwo = () => {
                 <div className=''>
                   <img
                     src='assets/images/thumbs/vendor-logo1.png'
-                    alt='marketpro'
+                    alt='Zelone Spice'
                     className='vendor-card__logo m-12'
                   />
                   <h6 className='title mt-32 text-lg'>Best Buy</h6>
@@ -162,7 +162,7 @@ const TopVendorsTwo = () => {
                         <div className='vendor-card__item bg-white rounded-circle flex-center'>
                           <img
                             src='assets/images/thumbs/vendor-two-img6.png'
-                            alt='marketpro'
+                            alt='Zelone Spice'
                           />
                         </div>
                       </div>
@@ -170,7 +170,7 @@ const TopVendorsTwo = () => {
                         <div className='vendor-card__item bg-white rounded-circle flex-center'>
                           <img
                             src='assets/images/thumbs/vendor-two-img7.png'
-                            alt='marketpro'
+                            alt='Zelone Spice'
                           />
                         </div>
                       </div>
@@ -178,7 +178,7 @@ const TopVendorsTwo = () => {
                         <div className='vendor-card__item bg-white rounded-circle flex-center'>
                           <img
                             src='assets/images/thumbs/vendor-two-img8.png'
-                            alt='marketpro'
+                            alt='Zelone Spice'
                           />
                         </div>
                       </div>
@@ -186,7 +186,7 @@ const TopVendorsTwo = () => {
                         <div className='vendor-card__item bg-white rounded-circle flex-center'>
                           <img
                             src='assets/images/thumbs/vendor-two-img9.png'
-                            alt='marketpro'
+                            alt='Zelone Spice'
                           />
                         </div>
                       </div>
@@ -194,7 +194,7 @@ const TopVendorsTwo = () => {
                         <div className='vendor-card__item bg-white rounded-circle flex-center'>
                           <img
                             src='assets/images/thumbs/vendor-two-img10.png'
-                            alt='marketpro'
+                            alt='Zelone Spice'
                           />
                         </div>
                       </div>
@@ -202,7 +202,7 @@ const TopVendorsTwo = () => {
                         <div className='vendor-card__item bg-white rounded-circle flex-center'>
                           <img
                             src='assets/images/thumbs/vendor-two-img11.png'
-                            alt='marketpro'
+                            alt='Zelone Spice'
                           />
                         </div>
                       </div>
@@ -216,7 +216,7 @@ const TopVendorsTwo = () => {
                 <div className=''>
                   <img
                     src='assets/images/thumbs/vendor-logo1.png'
-                    alt='marketpro'
+                    alt='Zelone Spice'
                     className='vendor-card__logo m-12'
                   />
                   <h6 className='title mt-32 text-lg'>Organic Market</h6>
@@ -237,7 +237,7 @@ const TopVendorsTwo = () => {
                         <div className='vendor-card__item bg-white rounded-circle flex-center'>
                           <img
                             src='assets/images/thumbs/vendor-two-img1.png'
-                            alt='marketpro'
+                            alt='Zelone Spice'
                           />
                         </div>
                       </div>
@@ -245,7 +245,7 @@ const TopVendorsTwo = () => {
                         <div className='vendor-card__item bg-white rounded-circle flex-center'>
                           <img
                             src='assets/images/thumbs/vendor-two-img2.png'
-                            alt='marketpro'
+                            alt='Zelone Spice'
                           />
                         </div>
                       </div>
@@ -253,7 +253,7 @@ const TopVendorsTwo = () => {
                         <div className='vendor-card__item bg-white rounded-circle flex-center'>
                           <img
                             src='assets/images/thumbs/vendor-two-img3.png'
-                            alt='marketpro'
+                            alt='Zelone Spice'
                           />
                         </div>
                       </div>
@@ -261,7 +261,7 @@ const TopVendorsTwo = () => {
                         <div className='vendor-card__item bg-white rounded-circle flex-center'>
                           <img
                             src='assets/images/thumbs/vendor-two-img4.png'
-                            alt='marketpro'
+                            alt='Zelone Spice'
                           />
                         </div>
                       </div>
@@ -269,7 +269,7 @@ const TopVendorsTwo = () => {
                         <div className='vendor-card__item bg-white rounded-circle flex-center'>
                           <img
                             src='assets/images/thumbs/vendor-two-img5.png'
-                            alt='marketpro'
+                            alt='Zelone Spice'
                           />
                         </div>
                       </div>
@@ -277,7 +277,7 @@ const TopVendorsTwo = () => {
                         <div className='vendor-card__item bg-white rounded-circle flex-center'>
                           <img
                             src='assets/images/thumbs/vendor-two-img6.png'
-                            alt='marketpro'
+                            alt='Zelone Spice'
                           />
                         </div>
                       </div>
@@ -291,7 +291,7 @@ const TopVendorsTwo = () => {
                 <div className=''>
                   <img
                     src='assets/images/thumbs/vendor-logo1.png'
-                    alt='marketpro'
+                    alt='Zelone Spice'
                     className='vendor-card__logo m-12'
                   />
                   <h6 className='title mt-32 text-lg'>Best Buy</h6>
@@ -312,7 +312,7 @@ const TopVendorsTwo = () => {
                         <div className='vendor-card__item bg-white rounded-circle flex-center'>
                           <img
                             src='assets/images/thumbs/vendor-two-img6.png'
-                            alt='marketpro'
+                            alt='Zelone Spice'
                           />
                         </div>
                       </div>
@@ -320,7 +320,7 @@ const TopVendorsTwo = () => {
                         <div className='vendor-card__item bg-white rounded-circle flex-center'>
                           <img
                             src='assets/images/thumbs/vendor-two-img7.png'
-                            alt='marketpro'
+                            alt='Zelone Spice'
                           />
                         </div>
                       </div>
@@ -328,7 +328,7 @@ const TopVendorsTwo = () => {
                         <div className='vendor-card__item bg-white rounded-circle flex-center'>
                           <img
                             src='assets/images/thumbs/vendor-two-img8.png'
-                            alt='marketpro'
+                            alt='Zelone Spice'
                           />
                         </div>
                       </div>
@@ -336,7 +336,7 @@ const TopVendorsTwo = () => {
                         <div className='vendor-card__item bg-white rounded-circle flex-center'>
                           <img
                             src='assets/images/thumbs/vendor-two-img9.png'
-                            alt='marketpro'
+                            alt='Zelone Spice'
                           />
                         </div>
                       </div>
@@ -344,7 +344,7 @@ const TopVendorsTwo = () => {
                         <div className='vendor-card__item bg-white rounded-circle flex-center'>
                           <img
                             src='assets/images/thumbs/vendor-two-img10.png'
-                            alt='marketpro'
+                            alt='Zelone Spice'
                           />
                         </div>
                       </div>
@@ -352,7 +352,7 @@ const TopVendorsTwo = () => {
                         <div className='vendor-card__item bg-white rounded-circle flex-center'>
                           <img
                             src='assets/images/thumbs/vendor-two-img11.png'
-                            alt='marketpro'
+                            alt='Zelone Spice'
                           />
                         </div>
                       </div>

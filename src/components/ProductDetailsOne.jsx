@@ -12,6 +12,7 @@ const ProductDetailsOne = () => {
   const [loading, setLoading] = useState(true);
   const [mainImage, setMainImage] = useState("");
   const [quantity, setQuantity] = useState(1);
+  const [meta, setMeta] = useState(null); // ← SEO meta from Laravel
 
   // Fetch product by slug
   useEffect(() => {
@@ -26,18 +27,26 @@ const ProductDetailsOne = () => {
         });
 
         if (!res.ok) throw new Error("Product not found");
+
         const json = await res.json();
 
         if (json.success && json.data) {
           setProduct(json.data);
+          setMeta(json.meta); // ← This powers all SEO
 
-          // Set first image as main (thumbnail or first gallery image)
+          // Set main image
           const firstImage =
             json.data.thumbnail ||
             (json.data.images && json.data.images[0]) ||
             "/assets/images/thumbs/product-details-thumb1.png";
-
           setMainImage(firstImage);
+
+          // Update document title & description (fallback + social)
+          document.title = json.meta?.title || json.data.name;
+          const descMeta = document.querySelector('meta[name="description"]');
+          if (descMeta && json.meta?.description) {
+            descMeta.setAttribute("content", json.meta.description);
+          }
         }
       } catch (err) {
         console.error("Failed to load product:", err);
@@ -124,7 +133,9 @@ const ProductDetailsOne = () => {
 
   // Not found
   if (!product) {
-    return <div className="py-80 text-center text-danger">Product not found</div>;
+    return (
+      <div className="py-80 text-center text-danger">Product not found</div>
+    );
   }
 
   // Rest of your component continues here...
@@ -145,9 +156,7 @@ const ProductDetailsOne = () => {
                   </div>
                   {/* Product Thumbnail Slider */}
 
-
-
-                 {allImages.length > 1 && (
+                  {allImages.length > 1 && (
                     <div className="mt-24">
                       <div className="product-details__images-slider">
                         <Slider {...settingsThumbs}>
@@ -167,7 +176,8 @@ const ProductDetailsOne = () => {
                                 alt={`Thumbnail ${index + 1}`}
                                 className="max-w-full max-h-full object-cover rounded-8"
                                 onError={(e) => {
-                                  e.target.src = "/assets/images/thumbs/product-details-thumb1.png";
+                                  e.target.src =
+                                    "/assets/images/thumbs/product-details-thumb1.png";
                                 }}
                               />
                             </div>
@@ -176,9 +186,6 @@ const ProductDetailsOne = () => {
                       </div>
                     </div>
                   )}
-
-
-
                 </div>
               </div>
               <div className="col-xl-6">
@@ -434,9 +441,7 @@ const ProductDetailsOne = () => {
                 >
                   <div className="mb-40">
                     <h6 className="mb-24">Product Description</h6>
-                    <p>
-                      {product.short_description}.{" "}
-                    </p>
+                    <p>{product.short_description}. </p>
                     {/* <p>
                       Morbi ut sapien vitae odio accumsan gravida. Morbi vitae
                       erat auctor, eleifend nunc a, lobortis neque. Praesent
@@ -465,185 +470,12 @@ const ProductDetailsOne = () => {
                       </li>
                     </ul>
 
-
-
                     <ul className="mt-32">
                       <li className="text-gray-400 mb-4">Made in Sri Lanka</li>
                       <li className="text-gray-400 mb-4">Ready To Eat.</li>
                     </ul>
                   </div>
 
-                  {/* <div className="mb-40">
-                    <h6 className="mb-24">Product Specifications</h6>
-                    <ul className="mt-32">
-                      <li className="text-gray-400 mb-14 flex-align gap-14">
-                        <span className="w-20 h-20 bg-main-50 text-main-600 text-xs flex-center rounded-circle">
-                          <i className="ph ph-check" />
-                        </span>
-                        <span className="text-heading fw-medium">
-                          Product Type:
-                          <span className="text-gray-500">
-                            {" "}
-                            Chips &amp; Dips
-                          </span>
-                        </span>
-                      </li>
-                      <li className="text-gray-400 mb-14 flex-align gap-14">
-                        <span className="w-20 h-20 bg-main-50 text-main-600 text-xs flex-center rounded-circle">
-                          <i className="ph ph-check" />
-                        </span>
-                        <span className="text-heading fw-medium">
-                          Product Name:
-                          <span className="text-gray-500">
-                            {" "}
-                            Potato Chips Classic{" "}
-                          </span>
-                        </span>
-                      </li>
-                      <li className="text-gray-400 mb-14 flex-align gap-14">
-                        <span className="w-20 h-20 bg-main-50 text-main-600 text-xs flex-center rounded-circle">
-                          <i className="ph ph-check" />
-                        </span>
-                        <span className="text-heading fw-medium">
-                          Brand:
-                          <span className="text-gray-500"> Lay's</span>
-                        </span>
-                      </li>
-                      <li className="text-gray-400 mb-14 flex-align gap-14">
-                        <span className="w-20 h-20 bg-main-50 text-main-600 text-xs flex-center rounded-circle">
-                          <i className="ph ph-check" />
-                        </span>
-                        <span className="text-heading fw-medium">
-                          FSA Eligible:
-                          <span className="text-gray-500"> No</span>
-                        </span>
-                      </li>
-                      <li className="text-gray-400 mb-14 flex-align gap-14">
-                        <span className="w-20 h-20 bg-main-50 text-main-600 text-xs flex-center rounded-circle">
-                          <i className="ph ph-check" />
-                        </span>
-                        <span className="text-heading fw-medium">
-                          Size/Count:
-                          <span className="text-gray-500"> 8.0oz</span>
-                        </span>
-                      </li>
-                      <li className="text-gray-400 mb-14 flex-align gap-14">
-                        <span className="w-20 h-20 bg-main-50 text-main-600 text-xs flex-center rounded-circle">
-                          <i className="ph ph-check" />
-                        </span>
-                        <span className="text-heading fw-medium">
-                          Item Code:
-                          <span className="text-gray-500"> 331539</span>
-                        </span>
-                      </li>
-                      <li className="text-gray-400 mb-14 flex-align gap-14">
-                        <span className="w-20 h-20 bg-main-50 text-main-600 text-xs flex-center rounded-circle">
-                          <i className="ph ph-check" />
-                        </span>
-                        <span className="text-heading fw-medium">
-                          Ingredients:
-                          <span className="text-gray-500">
-                            {" "}
-                            Potatoes, Vegetable Oil, and Salt.
-                          </span>
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="mb-40">
-                    <h6 className="mb-24">Nutrition Facts</h6>
-                    <ul className="mt-32">
-                      <li className="text-gray-400 mb-14 flex-align gap-14">
-                        <span className="w-20 h-20 bg-main-50 text-main-600 text-xs flex-center rounded-circle">
-                          <i className="ph ph-check" />
-                        </span>
-                        <span className="text-heading fw-medium">
-                          {" "}
-                          Total Fat 10g 13%
-                        </span>
-                      </li>
-                      <li className="text-gray-400 mb-14 flex-align gap-14">
-                        <span className="w-20 h-20 bg-main-50 text-main-600 text-xs flex-center rounded-circle">
-                          <i className="ph ph-check" />
-                        </span>
-                        <span className="text-heading fw-medium">
-                          {" "}
-                          Saturated Fat 1.5g 7%
-                        </span>
-                      </li>
-                      <li className="text-gray-400 mb-14 flex-align gap-14">
-                        <span className="w-20 h-20 bg-main-50 text-main-600 text-xs flex-center rounded-circle">
-                          <i className="ph ph-check" />
-                        </span>
-                        <span className="text-heading fw-medium">
-                          {" "}
-                          Cholesterol 0mg 0%
-                        </span>
-                      </li>
-                      <li className="text-gray-400 mb-14 flex-align gap-14">
-                        <span className="w-20 h-20 bg-main-50 text-main-600 text-xs flex-center rounded-circle">
-                          <i className="ph ph-check" />
-                        </span>
-                        <span className="text-heading fw-medium">
-                          {" "}
-                          Sodium 170mg 7%
-                        </span>
-                      </li>
-                      <li className="text-gray-400 mb-14 flex-align gap-14">
-                        <span className="w-20 h-20 bg-main-50 text-main-600 text-xs flex-center rounded-circle">
-                          <i className="ph ph-check" />
-                        </span>
-                        <span className="text-heading fw-medium">
-                          {" "}
-                          Potassium 350mg 6%
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="mb-0">
-                    <h6 className="mb-24">More Details</h6>
-                    <ul className="mt-32">
-                      <li className="text-gray-400 mb-14 flex-align gap-14">
-                        <span className="w-20 h-20 bg-main-50 text-main-600 text-xs flex-center rounded-circle">
-                          <i className="ph ph-check" />
-                        </span>
-                        <span className="text-gray-500">
-                          {" "}
-                          Lunarlon midsole delivers ultra-plush responsiveness
-                        </span>
-                      </li>
-                      <li className="text-gray-400 mb-14 flex-align gap-14">
-                        <span className="w-20 h-20 bg-main-50 text-main-600 text-xs flex-center rounded-circle">
-                          <i className="ph ph-check" />
-                        </span>
-                        <span className="text-gray-500">
-                          {" "}
-                          Encapsulated Air-Sole heel unit for lightweight
-                          cushioning
-                        </span>
-                      </li>
-                      <li className="text-gray-400 mb-14 flex-align gap-14">
-                        <span className="w-20 h-20 bg-main-50 text-main-600 text-xs flex-center rounded-circle">
-                          <i className="ph ph-check" />
-                        </span>
-                        <span className="text-gray-500">
-                          {" "}
-                          Colour Shown: Ale Brown/Black/Goldtone/Ale Brown
-                        </span>
-                      </li>
-                      <li className="text-gray-400 mb-14 flex-align gap-14">
-                        <span className="w-20 h-20 bg-main-50 text-main-600 text-xs flex-center rounded-circle">
-                          <i className="ph ph-check" />
-                        </span>
-                        <span className="text-gray-500">
-                          {" "}
-                          Style: 805899-202
-                        </span>
-                      </li>
-                    </ul>
-                  </div> */}
-
-                  {/* DYNAMIC SECTIONS – Replace your entire hard-coded block with this */}
                   {Object.keys(sections).length > 0 ? (
                     Object.values(sections).map((section, idx) => {
                       const sectionType = section.type;

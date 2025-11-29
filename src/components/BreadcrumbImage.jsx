@@ -21,7 +21,7 @@ const BreadcrumbImage = () => {
       <div className='container'>
         <div className='banner-inner__content text-center'>
           <h4 className='text-white mb-20 fw-semibold'>
-            Become A MarketPro Seller
+            Become A Zelone Spice Seller
           </h4>
           <p className='text-white my-20'>
             More than half the units sold in our stores from independent

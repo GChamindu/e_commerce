@@ -33,7 +33,7 @@ const RecentlyViewedOne = () => {
                   </span>
                   <img
                     src='assets/images/thumbs/product-two-img1.png'
-                    alt='marketpro'
+                    alt='Zelone Spice'
                     className='w-auto max-w-unset'
                   />
                 </Link>
@@ -74,7 +74,7 @@ const RecentlyViewedOne = () => {
                     </span>
                   </div>
                   <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                    Fulfilled by Marketpro
+                    Fulfilled by Zelone Spice
                   </span>
                   <div className='product-card__price mt-16 mb-30'>
                     <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -102,7 +102,7 @@ const RecentlyViewedOne = () => {
                   </span>
                   <img
                     src='assets/images/thumbs/product-two-img2.png'
-                    alt='marketpro'
+                    alt='Zelone Spice'
                     className='w-auto max-w-unset'
                   />
                 </Link>
@@ -143,7 +143,7 @@ const RecentlyViewedOne = () => {
                     </span>
                   </div>
                   <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                    Fulfilled by Marketpro
+                    Fulfilled by Zelone Spice
                   </span>
                   <div className='product-card__price mt-16 mb-30'>
                     <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -171,7 +171,7 @@ const RecentlyViewedOne = () => {
                   </span>
                   <img
                     src='assets/images/thumbs/product-two-img3.png'
-                    alt='marketpro'
+                    alt='Zelone Spice'
                     className='w-auto max-w-unset'
                   />
                 </Link>
@@ -212,7 +212,7 @@ const RecentlyViewedOne = () => {
                     </span>
                   </div>
                   <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                    Fulfilled by Marketpro
+                    Fulfilled by Zelone Spice
                   </span>
                   <div className='product-card__price mt-16 mb-30'>
                     <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -240,7 +240,7 @@ const RecentlyViewedOne = () => {
                   </span>
                   <img
                     src='assets/images/thumbs/product-two-img4.png'
-                    alt='marketpro'
+                    alt='Zelone Spice'
                     className='w-auto max-w-unset'
                   />
                 </Link>
@@ -281,7 +281,7 @@ const RecentlyViewedOne = () => {
                     </span>
                   </div>
                   <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                    Fulfilled by Marketpro
+                    Fulfilled by Zelone Spice
                   </span>
                   <div className='product-card__price mt-16 mb-30'>
                     <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -309,7 +309,7 @@ const RecentlyViewedOne = () => {
                   </span>
                   <img
                     src='assets/images/thumbs/product-two-img5.png'
-                    alt='marketpro'
+                    alt='Zelone Spice'
                     className='w-auto max-w-unset'
                   />
                 </Link>
@@ -350,7 +350,7 @@ const RecentlyViewedOne = () => {
                     </span>
                   </div>
                   <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                    Fulfilled by Marketpro
+                    Fulfilled by Zelone Spice
                   </span>
                   <div className='product-card__price mt-16 mb-30'>
                     <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -378,7 +378,7 @@ const RecentlyViewedOne = () => {
                   </span>
                   <img
                     src='assets/images/thumbs/product-two-img6.png'
-                    alt='marketpro'
+                    alt='Zelone Spice'
                     className='w-auto max-w-unset'
                   />
                 </Link>
@@ -419,7 +419,7 @@ const RecentlyViewedOne = () => {
                     </span>
                   </div>
                   <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                    Fulfilled by Marketpro
+                    Fulfilled by Zelone Spice
                   </span>
                   <div className='product-card__price mt-16 mb-30'>
                     <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>

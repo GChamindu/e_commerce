@@ -9,9 +9,9 @@ import Preloader from "@/helper/Preloader";
 import ScrollToTopInit from "@/helper/ScrollToTopInit";
 
 export const metadata = {
-  title: "MarketPro - E-commerce Next JS Template",
+  title: "Zelone Spice - E-commerce Top-Quality Ceylon Spices in Sri Lanka | Pure, Fresh & Organic",
   description:
-    "MarketPro is a comprehensive and versatile Next JS template designed for e-commerce platforms, specifically tailored for multi vendor marketplaces. With its modern design and extensive feature set, MarketPro provides everything you need to create a robust and user-friendly online marketplace..",
+    "Zelone Spice is a comprehensive and versatile Top-Quality Ceylon Spices in Sri Lanka | Pure, Fresh & Organic designed for e-commerce platforms, specifically tailored for multi vendor marketplaces. With its modern design and extensive feature set, Zelone Spice provides everything you need to create a robust and user-friendly online marketplace..",
 };
 
 const page = () => {

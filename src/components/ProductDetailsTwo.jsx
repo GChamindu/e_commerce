@@ -372,7 +372,7 @@ const ProductDetailsTwo = () => {
                     <i className='ph-fill ph-truck' />
                   </span>
                   <span className='text-sm text-neutral-600'>
-                    Ship from <span className='fw-semibold'>MarketPro</span>{" "}
+                    Ship from <span className='fw-semibold'>Zelone Spice</span>{" "}
                   </span>
                 </div>
                 <div className='px-16 py-8 bg-main-50 rounded-8 flex-between gap-24 mb-0'>

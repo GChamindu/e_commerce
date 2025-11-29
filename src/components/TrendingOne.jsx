@@ -198,7 +198,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -270,7 +270,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -342,7 +342,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -414,7 +414,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -486,7 +486,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -558,7 +558,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -640,7 +640,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -712,7 +712,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -784,7 +784,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -856,7 +856,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -928,7 +928,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -1000,7 +1000,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -1082,7 +1082,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -1154,7 +1154,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -1226,7 +1226,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -1298,7 +1298,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -1370,7 +1370,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -1442,7 +1442,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -1524,7 +1524,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -1596,7 +1596,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -1668,7 +1668,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -1740,7 +1740,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -1812,7 +1812,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -1884,7 +1884,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -1966,7 +1966,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -2038,7 +2038,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -2110,7 +2110,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -2182,7 +2182,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -2254,7 +2254,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -2326,7 +2326,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -2408,7 +2408,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -2480,7 +2480,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -2552,7 +2552,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -2624,7 +2624,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -2696,7 +2696,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -2768,7 +2768,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -2850,7 +2850,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -2922,7 +2922,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -2994,7 +2994,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -3066,7 +3066,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -3138,7 +3138,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>
@@ -3210,7 +3210,7 @@ const TrendingOne = () => {
                         </span>
                       </div>
                       <span className='py-2 px-8 text-xs rounded-pill text-main-two-600 bg-main-two-50 mt-16'>
-                        Fulfilled by Marketpro
+                        Fulfilled by Zelone Spice
                       </span>
                       <div className='product-card__price mt-16 mb-30'>
                         <span className='text-gray-400 text-md fw-semibold text-decoration-line-through'>

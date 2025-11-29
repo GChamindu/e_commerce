@@ -104,13 +104,13 @@ const HotDealsOne = () => {
             <div className='hot-deals position-relative rounded-16 bg-main-600 overflow-hidden p-28 z-1 text-center'>
               <img
                 src='assets/images/shape/offer-shape.png'
-                alt='marketpro'
+                alt='Zelone Spice'
                 className='position-absolute inset-block-start-0 inset-inline-start-0 z-n1 w-100 h-100 opacity-6'
               />
               <div className='hot-deals__thumb'>
                 <img
                   src='assets/images/thumbs/hot-deals-img.png'
-                  alt='marketpro'
+                  alt='Zelone Spice'
                 />
               </div>
               <div className='py-xl-4'>
@@ -161,7 +161,7 @@ const HotDealsOne = () => {
                     >
                       <img
                         src='assets/images/thumbs/product-img8.png'
-                        alt='marketpro'
+                        alt='Zelone Spice'
                       />
                     </Link>
                     <div className='product-card__content p-sm-2'>
@@ -225,7 +225,7 @@ const HotDealsOne = () => {
                     >
                       <img
                         src='assets/images/thumbs/product-img9.png'
-                        alt='marketpro'
+                        alt='Zelone Spice'
                       />
                     </Link>
                     <div className='product-card__content p-sm-2'>
@@ -289,7 +289,7 @@ const HotDealsOne = () => {
                     >
                       <img
                         src='assets/images/thumbs/product-img10.png'
-                        alt='marketpro'
+                        alt='Zelone Spice'
                       />
                     </Link>
                     <div className='product-card__content p-sm-2'>
@@ -353,7 +353,7 @@ const HotDealsOne = () => {
                     >
                       <img
                         src='assets/images/thumbs/product-img18.png'
-                        alt='marketpro'
+                        alt='Zelone Spice'
                       />
                     </Link>
                     <div className='product-card__content p-sm-2'>
@@ -417,7 +417,7 @@ const HotDealsOne = () => {
                     >
                       <img
                         src='assets/images/thumbs/product-img9.png'
-                        alt='marketpro'
+                        alt='Zelone Spice'
                       />
                     </Link>
                     <div className='product-card__content p-sm-2'>

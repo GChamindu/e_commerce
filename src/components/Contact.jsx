@@ -127,10 +127,10 @@ const Contact = () => {
                   <i className='ph-fill ph-envelope' />
                 </span>
                 <Link
-                  href='/mailto:support24@marketpro.com'
+                  href='/mailto:support24@Zelone Spice.com'
                   className='text-md text-gray-900 hover-text-main-600'
                 >
-                  support24@marketpro.com
+                  support24@Zelone Spice.com
                 </Link>
               </div>
               <div className='flex-align gap-16 mb-0'>
